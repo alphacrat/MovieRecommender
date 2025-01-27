@@ -57,6 +57,45 @@
     @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
   }
 
+  .sidebar {
+    @apply fixed left-6 z-20;
+    height: calc(100vh - 8rem);
+    top: 4rem;
+    
+    &-container {
+      @apply w-16 bg-[#1E1B3A] rounded-2xl flex flex-col items-center py-6 relative;
+    }
+    
+    &-brand {
+      @apply mb-8 px-4;
+    }
+    
+    &-nav {
+      @apply flex flex-col items-center gap-6 w-full;
+    }
+    
+    .nav-item {
+      @apply w-full flex items-center justify-center text-gray-400 hover:text-white transition-colors relative py-2;
+      
+      &.active {
+        @apply text-white;
+        
+        &::before {
+          content: '';
+          @apply absolute left-0 w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-r-md;
+        }
+      }
+    }
+    
+    &-bottom {
+      @apply absolute bottom-6 w-full;
+      
+      .nav-item {
+        @apply text-gray-400 hover:text-white transition-colors;
+      }
+    }
+}
+
   .trending {
     @apply mt-20;
 
